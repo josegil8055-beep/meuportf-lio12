@@ -802,6 +802,10 @@ button:focus-visible {
   padding: 60px 20px;
 }
 
+.project-hidden{
+  display: none;
+}
+
 .projects-grid {
   display: none;
   grid-template-columns: repeat(3, 1fr);
