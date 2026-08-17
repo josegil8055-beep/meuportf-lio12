@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOME | Portfólio Front-End</title>
+  <meta name="description" content="Portfólio profissional de desenvolvimento Front-End.">
+
+  <!-- ================= FONTES (Google Fonts) =================
+       Orbitron   -> usada nos títulos grandes (visual tecnológico)
+       Rajdhani   -> usada em subtítulos e destaques
+       JetBrains Mono -> usada em textos "código" (labels, tags, números)
+       Inter      -> usada no corpo de texto (leitura confortável) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Ícones (SVG inline são usados no HTML, não precisa de biblioteca externa) -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       FUNDO DE PARTÍCULAS (feito apenas com CSS)
+       Estas divs são pontos que "flutuam" e piscam no fundo.
+       Para adicionar/remover partículas, basta duplicar/apagar
+       as divs .particle e ajustar o nth-child correspondente no CSS.
+  ========================================================== -->
+  <div class="particles" aria-hidden="true">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- =========================================================
+       NAVBAR FIXA
+       Fica sempre visível no topo da página (position: fixed).
+       O JS adiciona a classe "scrolled" quando o utilizador desce
+       a página, para dar um fundo mais sólido à navbar.
+  ========================================================== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+
+      <!-- LOGO: troca o texto "DEV" e "//PORTFOLIO" pelo teu logotipo -->
+      <a href="#inicio" class="logo">
+        <span class="logo-bracket">&lt;</span>DEV<span class="logo-bracket">/&gt;</span>
+        <span class="logo-sub">PORTFOLIO</span>
+      </a>
+
+      <!-- LINKS DE NAVEGAÇÃO (desktop) -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" class="nav-link active-link">Início</a></li>
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#competencias" class="nav-link">Competências</a></li>
+        <li><a href="#projetos" class="nav-link">Projetos</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <!-- BOTÃO HAMBÚRGUER (aparece apenas em ecrãs pequenos, via CSS) -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       HERO SECTION
+       Primeira secção visível ao entrar no site.
+  ========================================================== -->
+  <section id="inicio" class="hero">
+    <div class="hero-grid-line"></div>
+
+    <div class="hero-content reveal">
+
+      <!-- FOTO DE PERFIL
+           Substitui a imagem abaixo por "FOTO_DE_PERFIL.jpg"
+           (coloca o ficheiro na mesma pasta do index.html) -->
+      <div class="hero-photo-wrapper">
+        <div class="hero-photo-ring"></div>
+        <img src="img/12.jpg" alt="Foto de perfil" class="hero-photo" onerror="this.style.display='none'; this.parentElement.classList.add('no-photo');">
+        <!-- Ícone placeholder que aparece se a foto não existir -->
+        <div class="hero-photo-placeholder">👤</div>
+      </div>
+
+      <!-- Etiqueta pequena acima do nome -->
+      <p class="hero-eyebrow">// OLÁ, EU SOU</p>
+
+      <!-- NOME: substitui "TEU NOME AQUI" -->
+      <h1 class="hero-name">JOSÉ GIL ULTRA SALDANHA</h1>
+
+      <!-- PROFISSÃO: o efeito de digitação é controlado no script.js
+           Procura a constante "typingWords" para editar as palavras -->
+      <h2 class="hero-role">
+        <span id="typingText"></span><span class="typing-cursor">|</span>
+      </h2>
+
+      <!-- DESCRIÇÃO: substitui o texto abaixo -->
+      <p class="hero-description"> 
+        Sou José Gil, estudante e engenheiro em formação, apaixonado por tecnologia, programação e criação de projetos digitais. Tenho interesse em <strong>desenvolvimento web, software eletrónica e inovação,</strong> procurando transformar ideias em soluções praticas e funcionais. Estou constantemente a aprender, experimentar novas tecnologias e evoluir as minhas competências.  
+      </p>
+
+      <!-- BOTÕES DE AÇÃO -->
+      <div class="hero-buttons">
+        <a href="#projetos" class="btn btn-primary">
+          Ver Projetos
+        </a>
+        <!-- Substitui "CURRICULO.pdf" pelo caminho real do teu CV -->
+        <a href="Morada.docx" class="btn btn-outline" download>
+          Download CV
+        </a>
+      </div>
+
+      <!-- Indicador de scroll (apenas decorativo) -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SOBRE MIM
+  ========================================================== -->
+  <section id="sobre" class="section about-section">
+    <div class="section-inner">
+
+      <div class="section-heading reveal">
+        <p class="section-eyebrow">01 // Quem sou eu</p>
+        <h2 class="section-title">Sobre Mim</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <!-- SUBSTITUIR PELO TEU TEXTO -->
+          <p>
+            Sou um desenvolvedor Front-End apaixonado por transformar ideias
+            em interfaces rápidas, acessíveis e visualmente marcantes. Gosto
+            de trabalhar próximo do detalhe: a curva certa de uma animação,
+            o contraste certo de uma cor, o tempo certo de uma transição.
+          </p>
+          <p>
+            Ao longo do meu percurso tenho construído projetos completos —
+            desde jogos e ferramentas até aplicações web full-stack —
+            sempre com foco em código limpo, organizado e fácil de manter.
+            Estou constantemente a aprender novas tecnologias e a desafiar-me
+            com projetos pessoais.
+          </p>
+          <p>
+            Quando não estou a programar, estou provavelmente a explorar
+            novas referências de design, a jogar ou a estudar algo novo
+            na área de tecnologia.
+          </p>
+          <!-- FIM DO TEXTO A SUBSTITUIR -->
+        </div>
+
+        <!-- Cartão lateral com informações rápidas -->
+        <div class="about-card reveal">
+          <div class="about-card-row">
+            <span class="about-card-label">Nome</span>
+            <span class="about-card-value">JOSÉ GIL ULTRA SALDANHA</span>
+          </div>
+          <div class="about-card-row">
+            <span class="about-card-label">Função</span>
+            <span class="about-card-value">Programador Front-End</span>
+          </div>
+          <div class="about-card-row">
+            <span class="about-card-label">Localização</span>
+            <span class="about-card-value">Luanda, Angola</span>
+          </div>
+          <div class="about-card-row">
+            <span class="about-card-label">Disponibilidade</span>
+            <span class="about-card-value accent-text">Aberto a oportunidades</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       COMPETÊNCIAS
+       Cada .skill-card tem um atributo data-percent que define
+       o tamanho final da barra de progresso (0 a 100).
+       O JS lê esse valor e anima a barra quando entra no ecrã.
+  ========================================================== -->
+  <section id="competencias" class="section skills-section">
+    <div class="section-inner">
+
+      <div class="section-heading reveal">
+        <p class="section-eyebrow">02 // O que eu domino</p>
+        <h2 class="section-title">Competências</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- Para alterar a percentagem de cada skill, muda o valor
+             de data-percent (ex: data-percent="85") -->
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span class="skill-icon"></span>
+            <span class="skill-name">NIVEL TECNICO</span>
+            <span class="skill-percent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-percent="70"></div>
+          </div>
+        </div>
+        
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span class="skill-icon"></span>
+            <span class="skill-name">HTML</span>
+            <span class="skill-percent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-percent="70"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span class="skill-icon"></span>
+            <span class="skill-name">CSS</span>
+            <span class="skill-percent">65%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-percent="65"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span class="skill-icon"></span>
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-percent">30%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-percent="30"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span class="skill-icon"></span>
+            <span class="skill-name">Python</span>
+            <span class="skill-percent">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-percent="70"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span class="skill-icon"></span>
+            <span class="skill-name">Java</span>
+            <span class="skill-percent">10%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-percent="10"></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-top">
+            <span class="skill-icon"></span>
+            <span class="skill-name">C++</span>
+            <span class="skill-percent">15%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" data-percent="15"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       ESTATÍSTICAS
+       Cada número tem um atributo data-target com o valor final.
+       O JS anima a contagem de 0 até esse valor quando a secção
+       entra no ecrã (Intersection Observer).
+       PARA ALTERAR OS NÚMEROS: muda apenas o valor de data-target.
+  ========================================================== -->
+  <section class="section stats-section">
+    <div class="stats-glow"></div>
+    <div class="section-inner">
+      <div class="stats-grid">
+
+        <div class="stat-card reveal">
+          <span class="stat-number" data-target="24">0</span>
+          <span class="stat-plus">+</span>
+          <p class="stat-label">Projetos</p>
+        </div>
+
+        <div class="stat-card reveal">
+          <span class="stat-number" data-target="4">0</span>
+          <span class="stat-plus">+</span>
+          <p class="stat-label">Tecnologias</p>
+        </div>
+
+        <div class="stat-card reveal">
+          <span class="stat-number" data-target="2">0</span>
+          <span class="stat-plus">+</span>
+          <p class="stat-label">Certificados</p>
+        </div>
+
+        <div class="stat-card reveal">
+          <span class="stat-number" data-target="1200">0</span>
+          <span class="stat-plus">+</span>
+          <p class="stat-label">Horas de Estudo</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PROJETOS
+       Filtro por tecnologia + 6 cartões de projeto.
+       Cada cartão tem um atributo data-category com a(s)
+       tecnologia(s) usada(s), separadas por espaço, em minúsculas
+       (ex: data-category="html css js"). O JS usa este atributo
+       para mostrar/esconder cartões ao clicar nos filtros.
+  ========================================================== -->
+  <section id="projetos" class="section projects-section">
+    <div class="section-inner">
+
+      <div class="section-heading reveal">
+        <p class="section-eyebrow">03 // O que eu construí</p>
+        <h2 class="section-title">Projetos</h2>
+      </div>
+
+      <!-- BOTÕES DE FILTRO -->
+      <div class="filters reveal">
+        <button class="filter-btn active-filter" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="html">HTML</button>
+        <button class="filter-btn" data-filter="css">CSS</button>
+        <button class="filter-btn" data-filter="js">JavaScript</button>
+      </div>
+      <div class="projetos-breve">
+        <h2>projetos serão publicados brevemente</h2>
+        <p>estou a preparar novos projetos para apresentar aqui.</p>
+      </div> 
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- ============= PROJETO 1 ============= -->
+        <article class="project-card reveal" data-category="js html css">
+          <div class="project-image">
+            <!-- TROCAR IMAGEM: substitui o src abaixo -->
+            <img src="https://placehold.co/600x400/0a0a0a/ff0033?text=Xadrez" alt="Jogo de Xadrez" loading="lazy">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-body">
+            <!-- TROCAR NOME -->
+            <h3 class="project-name">Jogo de Xadrez</h3>
+            <!-- TROCAR DESCRIÇÃO -->
+            <p class="project-desc">
+              Jogo de xadrez completo para dois jogadores em modo local,
+              com validação de regras, histórico de jogadas e interface
+              modular em JavaScript puro.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <!-- TROCAR LINK GITHUB -->
+              <a href="https://github.com/teu-usuario/jogo-xadrez" target="_blank" rel="noopener" class="project-link">GitHub</a>
+              <!-- TROCAR LINK DEMO -->
+              <a href="#" target="_blank" rel="noopener" class="project-link project-link-demo">Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============= PROJETO 2 ============= -->
+        <article class="project-card reveal" data-category="js html css">
+          <div class="project-image">
+            <img src="https://placehold.co/600x400/0a0a0a/ff0033?text=PinterX" alt="Clone do Pinterest" loading="lazy">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">PinterX — Clone do Pinterest</h3>
+            <p class="project-desc">
+              Galeria estilo masonry inspirada no Pinterest, com upload de
+              imagens via FileReader API, filtragem por categorias e
+              gestão de estado em JavaScript puro.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/teu-usuario/pinterx" target="_blank" rel="noopener" class="project-link">GitHub</a>
+              <a href="#" target="_blank" rel="noopener" class="project-link project-link-demo">Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============= PROJETO 3 ============= -->
+        <article class="project-card reveal" data-category="js html css">
+          <div class="project-image">
+            <img src="https://placehold.co/600x400/0a0a0a/ff0033?text=Mundial+2026" alt="Simulador Mundial 2026" loading="lazy">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Simulador Mundial 2026</h3>
+            <p class="project-desc">
+              Simulador interativo do Campeonato do Mundo, com sorteio de
+              grupos, simulação de jogos e chaveamento eliminatório
+              gerado dinamicamente em JavaScript.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/teu-usuario/mundial-2026" target="_blank" rel="noopener" class="project-link">GitHub</a>
+              <a href="#" target="_blank" rel="noopener" class="project-link project-link-demo">Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============= PROJETO 4 ============= -->
+        <article class="project-card reveal" data-category="js html css">
+          <div class="project-image">
+            <img src="https://placehold.co/600x400/0a0a0a/ff0033?text=Jarvis+Neo" alt="Interface IA Jarvis" loading="lazy">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Jarvis Neo — Interface IA Holográfica</h3>
+            <p class="project-desc">
+              Assistente pessoal holográfico com reconhecimento de voz,
+              chat, agenda, flashcards e conversor de bases, num único
+              ficheiro HTML com estética neo-futurista.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/teu-usuario/jarvis-neo" target="_blank" rel="noopener" class="project-link">GitHub</a>
+              <a href="#" target="_blank" rel="noopener" class="project-link project-link-demo">Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============= PROJETO 5 ============= -->
+        <article class="project-card reveal" data-category="html css">
+          <div class="project-image">
+            <img src="https://placehold.co/600x400/0a0a0a/ff0033?text=Ebook+Dev" alt="E-book HTML CSS JavaScript" loading="lazy">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">E-book HTML, CSS &amp; JavaScript</h3>
+            <p class="project-desc">
+              Coleção de cinco volumes em PDF sobre desenvolvimento
+              Front-End, gerada através de um pipeline HTML → PDF, com
+              identidade visual cyberpunk consistente.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/teu-usuario/ebook-dev" target="_blank" rel="noopener" class="project-link">GitHub</a>
+              <a href="#" target="_blank" rel="noopener" class="project-link project-link-demo">Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============= PROJETO 6 ============= -->
+        <article class="project-card reveal" data-category="js html css">
+          <div class="project-image">
+            <img src="https://placehold.co/600x400/0a0a0a/ff0033?text=Novo+Projeto" alt="Projeto Personalizado" loading="lazy">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-name">Projeto Personalizado</h3>
+            <p class="project-desc">
+              Espaço reservado para o teu próximo projeto. Substitui esta
+              descrição, a imagem e os links quando quiseres adicionar
+              um novo trabalho ao portfólio.
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noopener" class="project-link">GitHub</a>
+              <a href="#" target="_blank" rel="noopener" class="project-link project-link-demo">Demo</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Mensagem exibida quando o filtro não encontra nenhum projeto -->
+      <p class="no-results" id="noResults">Nenhum projeto encontrado para este filtro.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONTACTO
+  ========================================================== -->
+  <section id="contacto" class="section contact-section">
+    <div class="section-inner">
+
+      <div class="section-heading reveal">
+        <p class="section-eyebrow">04 // Vamos falar</p>
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">
+          Estou disponível para novos projetos e oportunidades. Envia uma
+          mensagem por qualquer um dos canais abaixo.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- E-MAIL: SUBSTITUIR PELO TEU EMAIL -->
+        <a href="mailto:josegil8055@gmail.com" class="contact-card reveal">
+          <span class="contact-icon"></span>
+          <span class="contact-title">Email</span>
+          <span class="contact-value">josegil8055@gmail.com</span>
+        </a>
+
+        <!-- WHATSAPP: SUBSTITUIR PELO TEU NÚMERO (formato internacional, sem "+") -->
+        <a href="https://wa.me/2449532644" target="_blank" rel="noopener" class="contact-card reveal">
+          <span class="contact-icon"></span>
+          <span class="contact-title">WhatsApp</span>
+          <span class="contact-value">+244 953 264 486</span>
+        </a>
+
+        <!-- GITHUB: substitui o link pelo teu perfil -->
+        <a href="https://github.com/teu-usuario" target="_blank" rel="noopener" class="contact-card reveal">
+          <span class="contact-icon"></span>
+          <span class="contact-title">GitHub</span>
+          <span class="contact-value"></span>
+        </a>
+
+    
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       RODAPÉ
+  ========================================================== -->
+  <footer class="footer">
+    <!-- Substitui "Nome" pelo teu nome -->
+    <p>&copy; <span id="currentYear">2026</span> José Gil Ultra saldanha. Todos os direitos reservados.</p>
+    <p class="footer-made">Feito com HTML, CSS &amp; JavaScript puros.</p>
+  </footer>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+    <span>↑</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
